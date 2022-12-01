@@ -1,4 +1,4 @@
-FROM python:3.8.3-slim
+FROM python:3.9-slim
 # FIXME: this image is pinned due to https://github.com/python/cpython/pull/21473 introduced in 3.8.4
 
 ARG GEMFURY_DOWNLOAD_KEY
