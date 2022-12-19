@@ -27,8 +27,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          poetry self update
-          poetry config http-basic.sensynehealth ${GEMFURY_DOWNLOAD_KEY} ''
+          poetry self update --no-ansi
           pip install --upgrade tox
       - run:
           name: Set up tox tests
