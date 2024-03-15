@@ -2,7 +2,7 @@
 name = "she-gdm-bg-readings-api"
 version = "0.0.1"
 description = "GDM BG Readings API"
-authors = ["adam.romano@sensynehealth.com"]
+authors = ["Vladyslav Storozhenko <vladyslav.storozhenko@huma.com>"]
 keywords = ["Swagger", "Readings", "Blood", "Glucose"]
 repository = "https://github.com/draysontechnologies/gdm-bg-readings-api"
 
