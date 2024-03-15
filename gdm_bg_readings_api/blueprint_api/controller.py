@@ -338,6 +338,18 @@ def update_reading(patient_id: str, reading_id: str, reading_data: Dict) -> Dict
         patient_id=patient_id, uuid=reading_id
     ).first_or_404()
 
+    # Update measured timestamp
+    measured_timestamp = reading_data.get("measured_timestamp", None)
+    if (
+        measured_timestamp is not None
+        and reading.reading_metadata.meter_serial_number == "7802H"
+    ):
+        measured_timestamp, measured_timezone = split_timestamp(
+            reading_data.pop("measured_timestamp")
+        )
+        reading.measured_timestamp = measured_timestamp
+        reading.measured_timezone = measured_timezone
+
     # Update comment
     comment = reading_data.get("comment", None)
     if comment is not None:

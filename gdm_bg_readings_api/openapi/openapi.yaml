@@ -1603,6 +1603,10 @@ components:
     ReadingUpdateRequest:
       type: object
       properties:
+        measured_timestamp:
+          type: string
+          description: ISO8601 timestamp at which reading was taken
+          example: '2020-01-01T00:00:00.000Z'
         comment:
           type: string
           nullable: true

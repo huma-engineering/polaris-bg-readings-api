@@ -261,7 +261,7 @@ class ReadingResponseCompact(Identifier, ReadingCommonFields):
     )
 
     red_alert = fields.String(
-        Arequired=False,
+        required=False,
         description="A red alert id associated with the reading",
         example="bfd1de2d-2a8d-464a-99bc-7c3fe8f881bc",
     )
@@ -322,6 +322,11 @@ class ReadingUpdateRequest(Schema):
         unknown = EXCLUDE
         ordered = True
 
+    measured_timestamp = fields.String(
+        required=False,
+        description="ISO8601 timestamp at which reading was taken",
+        example="2020-01-01T00:00:00.000Z",
+    )
     comment = fields.String(
         required=False,
         allow_none=True,

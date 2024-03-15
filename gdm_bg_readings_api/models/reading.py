@@ -88,6 +88,7 @@ class Reading(ModelIdentifier, db.Model):
                 "units": str,
             },
             "updatable": {
+                "measured_timestamp": str,
                 "comment": str,
                 "prandial_tag": dict,
                 "doses": list,

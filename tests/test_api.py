@@ -462,6 +462,7 @@ class TestApi:
             {"comment": "new comment"},
             {"prandial_tag": {"value": 6}},
             {"doses": [{"amount": 1.5, "medication_id": "12345"}]},
+            {"measured_timestamp": "2024-01-01T01:01:01.000Z"},
         ],
     )
     def test_patch_reading_success(

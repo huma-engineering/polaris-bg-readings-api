@@ -566,6 +566,23 @@ class TestController:
         assert second_update["doses"][1]["medication_id"] == "second"
         assert second_update["doses"][1]["amount"] == 3.5
 
+    def test_update_reading_measured_timestamp(
+        self, patient_uuid: str, reading_dict_in: Dict
+    ) -> None:
+        reading_dict_in["reading_metadata"]["meter_serial_number"] = "7802H"
+        original_reading: Dict = controller.create_reading(
+            patient_uuid, reading_dict_in
+        )
+        new_measured_timestamp = "2024-01-01T01:01:01.000Z"
+        updated_reading = controller.update_reading(
+            patient_uuid,
+            original_reading["uuid"],
+            {"measured_timestamp": "2024-01-01T01:01:01.000Z"},
+        )
+        assert updated_reading["measured_timestamp"] == parse_iso8601_to_datetime(
+            new_measured_timestamp
+        )
+
     def test_update_reading_counts_alerts(
         self, mock_trustomer: Mock, patient_uuid: str
     ) -> None:
