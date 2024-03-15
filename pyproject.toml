@@ -2,13 +2,15 @@
 name = "she-gdm-bg-readings-api"
 version = "0.0.1"
 description = "GDM BG Readings API"
-authors = ["adam.romano@sensynehealth.com"]
+authors = ["Vladyslav Storozhenko <vladyslav.storozhenko@huma.com>"]
 keywords = ["Swagger", "Readings", "Blood", "Glucose"]
 repository = "https://github.com/draysontechnologies/gdm-bg-readings-api"
 
 [tool.poetry.dependencies]
 python = "^3.9"
 cachetools = "5.*"
+connexion = "2.13.*"
+flask = "2.2.*"
 flask-batteries-included = {version = "3.*", extras = ["pgsql", "apispec"]}
 kombu-batteries-included = "1.*"
 pytz = "2020.1.*"
